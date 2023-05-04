@@ -1,84 +1,19 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Post from "./Post";
+import Header from "./Header";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import IndexPage from "./pages/IndexPage";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
-    <main>
-      <header>
-        <a href="" className="logo">
-          MyBlog
-        </a>
-        <nav>
-          <a href="">Login</a>
-          <a href="">Register</a>
-        </nav>
-      </header>
-      <div className="post">
-        <div className="image">
-          <img
-            src="https://www.parisperfect.com/blog/wp-content/uploads/2023/03/paris-one-bedroom-apartment-for-sale-eiffel-tower-view.jpg"
-            alt="Paris"
-          />
-        </div>
-        <div className="texts">
-          <h2>MOVE-IN READY APARTMENT FOR SALE IN PARIS!</h2>
-          <p className="info">
-            <a className="author">Deen Gerald</a>
-            <time>2023-05-04</time>
-          </p>
-          <p className="summary">
-            Every once in a while a property so perfect comes along that we know
-            we have to transform it into a dream apartment for sale in Paris. We
-            gather our trusted team of builders and designers and create a
-            stylish and beautifully finished Parisian home.
-          </p>
-        </div>
-      </div>
-
-      <div className="post">
-        <div className="image">
-          <img
-            src="https://www.parisperfect.com/blog/wp-content/uploads/2023/03/paris-one-bedroom-apartment-for-sale-eiffel-tower-view.jpg"
-            alt="Paris"
-          />
-        </div>
-        <div className="texts">
-          <h2>MOVE-IN READY APARTMENT FOR SALE IN PARIS!</h2>
-          <p className="info">
-            <a className="author">Deen Gerald</a>
-            <time>2023-05-04</time>
-          </p>
-          <p className="summary">
-            Every once in a while a property so perfect comes along that we know
-            we have to transform it into a dream apartment for sale in Paris. We
-            gather our trusted team of builders and designers and create a
-            stylish and beautifully finished Parisian home.
-          </p>
-        </div>
-      </div>
-
-      <div className="post">
-        <div className="image">
-          <img
-            src="https://www.parisperfect.com/blog/wp-content/uploads/2023/03/paris-one-bedroom-apartment-for-sale-eiffel-tower-view.jpg"
-            alt="Paris"
-          />
-        </div>
-        <div className="texts">
-          <h2>MOVE-IN READY APARTMENT FOR SALE IN PARIS!</h2>
-          <p className="info">
-            <a className="author">Deen Gerald</a>
-            <time>2023-05-04</time>
-          </p>
-          <p className="summary">
-            Every once in a while a property so perfect comes along that we know
-            we have to transform it into a dream apartment for sale in Paris. We
-            gather our trusted team of builders and designers and create a
-            stylish and beautifully finished Parisian home.
-          </p>
-        </div>
-      </div>
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<IndexPage />} />
+        <Route path={"/login"} element={<LoginPage />} />
+      </Route>
+    </Routes>
   );
 }
 
